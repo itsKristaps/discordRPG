@@ -19,3 +19,15 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
 
 bot.run(TOKEN)
+
+@bot.event
+async def on_ready():
+    await bot.load_extension("cogs.profile")
+
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} commands")
+    except Exception as e:
+        print(e)
+
+    print(f"Logged in as {bot.user}")
