@@ -3,4 +3,3 @@ venv/
 __pycache__/
 *.db
 /database/chema.sql
-/database/database.py
